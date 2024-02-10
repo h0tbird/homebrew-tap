@@ -1,2 +1,2 @@
-# homebrew-tools
-Octoroot Homebrew Tap
+# homebrew-tap
+Octoroot homebrew tap
