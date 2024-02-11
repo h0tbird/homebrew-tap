@@ -8,6 +8,7 @@ require "download_strategy"
 #------------------------------------------------------------------------------
 
 class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
+
   require "utils/formatter"
   require "utils/github"
 
@@ -80,7 +81,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
 
   def resolve_url_basename_time_file_size(url, timeout: nil)
      [download_url, "", Time.now, 0, false]
-   end
+  end
 
   def download_url
     "https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
