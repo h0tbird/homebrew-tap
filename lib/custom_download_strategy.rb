@@ -3,7 +3,7 @@ require "download_strategy"
 #------------------------------------------------------------------------------
 # GitHubPrivateRepositoryDownloadStrategy downloads contents from GitHub
 # Private Repository. This download strategy uses GitHub access tokens (in the
-# environment variables `GITHUB_TOKEN`) to sign the request. It
+# environment variables `HOMEBREW_GITHUB_API_TOKEN`) to sign the request. It
 # works with public one, but in that case simply use CurlDownloadStrategy.
 #------------------------------------------------------------------------------
 
@@ -37,9 +37,9 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   end
 
   def set_github_token
-    @github_token = ENV["GITHUB_TOKEN"]
+    @github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
     unless @github_token
-      raise CurlDownloadStrategyError, "Environmental variable GITHUB_TOKEN is required."
+      raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
     end
 
     validate_github_repository_access!
@@ -52,7 +52,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     # We only handle HTTPNotFoundError here,
     # becase AuthenticationFailedError is handled within util/github.
     message = <<~EOS
-      GITHUB_TOKEN can not access the repository: #{@owner}/#{@repo}
+      HOMEBREW_GITHUB_API_TOKEN can not access the repository: #{@owner}/#{@repo}
       This token may not have permission to access the repository or the url of formula may be incorrect.
     EOS
     raise CurlDownloadStrategyError, message
@@ -62,7 +62,7 @@ end
 #------------------------------------------------------------------------------
 # GitHubPrivateRepositoryReleaseDownloadStrategy downloads tarballs from GitHub
 # Release assets. This download strategy uses GitHub access tokens (in the
-# environment variables GITHUB_TOKEN) to sign the request.
+# environment variables HOMEBREW_GITHUB_API_TOKEN) to sign the request.
 #------------------------------------------------------------------------------
 
 class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDownloadStrategy
