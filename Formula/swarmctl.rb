@@ -6,21 +6,21 @@ require_relative "../lib/custom_download_strategy"
 class Swarmctl < Formula
   desc "A k8s service swarm"
   homepage "https://github.com/octoroot/k-swarm"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/octoroot/k-swarm/releases/download/v0.2.0/swarmctl_0.2.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "a2fb193fb0d7e76cf21b9b35baf1d12f642b6ba367248e168997d390ef88c2a9"
+      url "https://github.com/octoroot/k-swarm/releases/download/v0.3.0/swarmctl_0.3.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "b24cc3a98d410e62db17a8f5b19b0262cab88ba852c7b2325d8921f3933efeee"
 
       def install
         bin.install "swarmctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/octoroot/k-swarm/releases/download/v0.2.0/swarmctl_0.2.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "cdca3d514c098455a2c946b3a2eab199b4920073b4d0614a7ff300db7252d097"
+      url "https://github.com/octoroot/k-swarm/releases/download/v0.3.0/swarmctl_0.3.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "4a76cf364ad66aae7cd6941aa8be0d461fbf016136e80f0bdad72d62c89be4e5"
 
       def install
         bin.install "swarmctl"
@@ -30,16 +30,16 @@ class Swarmctl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/octoroot/k-swarm/releases/download/v0.2.0/swarmctl_0.2.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "140351bcd5f8dfe09ca8dc8827cdbe11e6c5f6bc79c74b0c02d3405910a3a430"
+      url "https://github.com/octoroot/k-swarm/releases/download/v0.3.0/swarmctl_0.3.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "d03cf954cefa904e5825b0af9b3920df2b15f607550c6bf24be600c787f03c5f"
 
       def install
         bin.install "swarmctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/octoroot/k-swarm/releases/download/v0.2.0/swarmctl_0.2.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "0d8c6ee69945bb1758c8ee0044bbd1d45fd38e90edc3ecb0bea3e7915e0bdcc2"
+      url "https://github.com/octoroot/k-swarm/releases/download/v0.3.0/swarmctl_0.3.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "f134cd37736dbbbb2398cb16a78e2d506ef93e3cf7143e709dbdd49ed4046690"
 
       def install
         bin.install "swarmctl"
