@@ -12,7 +12,7 @@ class Swarmctl < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/octoroot/k-swarm/releases/download/v0.3.0/swarmctl_0.3.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "b24cc3a98d410e62db17a8f5b19b0262cab88ba852c7b2325d8921f3933efeee"
+      sha256 "b5096a5d83fd4766c7b8cf2b7b5090bb2e7167b78891199246aeeb86bd76bf59"
 
       def install
         bin.install "swarmctl"
@@ -20,7 +20,7 @@ class Swarmctl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/octoroot/k-swarm/releases/download/v0.3.0/swarmctl_0.3.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "4a76cf364ad66aae7cd6941aa8be0d461fbf016136e80f0bdad72d62c89be4e5"
+      sha256 "3720000b409dccdf0c6ca12001540a50b74abe92fd6cf99b05e3c0958ee81fe9"
 
       def install
         bin.install "swarmctl"
@@ -31,7 +31,7 @@ class Swarmctl < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/octoroot/k-swarm/releases/download/v0.3.0/swarmctl_0.3.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "d03cf954cefa904e5825b0af9b3920df2b15f607550c6bf24be600c787f03c5f"
+      sha256 "dfe537fd55176f600bb003661170d5a3518f3d66e229805bb53122da2b735ccc"
 
       def install
         bin.install "swarmctl"
@@ -39,7 +39,7 @@ class Swarmctl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/octoroot/k-swarm/releases/download/v0.3.0/swarmctl_0.3.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f134cd37736dbbbb2398cb16a78e2d506ef93e3cf7143e709dbdd49ed4046690"
+      sha256 "5389904cb2ce4998228711c9e743c9d7b127091901afad51bf8cb1a1a3cfaedc"
 
       def install
         bin.install "swarmctl"
