@@ -5,21 +5,21 @@
 class Swarmctl < Formula
   desc "A k8s service swarm"
   homepage "https://github.com/h0tbird/k-swarm"
-  version "0.3.5"
+  version "0.3.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.5/swarmctl_0.3.5_darwin_amd64.tar.gz"
-      sha256 "07a2710ce88d30ac7d8eed7a3acb35da1c0ee60cce66044fc67f0e53314192b5"
+      url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.6/swarmctl_0.3.6_darwin_amd64.tar.gz"
+      sha256 "f2750e4bc52ce50eb4116990a5b1ce1a107820983252423a66567183d7b4dd34"
 
       def install
         bin.install "swarmctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.5/swarmctl_0.3.5_darwin_arm64.tar.gz"
-      sha256 "a99dc35a2d9f9e9fd62e04a081d1c2d16552ad53ad1bff36fdf2d3a607981009"
+      url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.6/swarmctl_0.3.6_darwin_arm64.tar.gz"
+      sha256 "0985ecc2a98082e67fa14bc26312f4a768d6a704a80b7c770b2a4b6dc9c34985"
 
       def install
         bin.install "swarmctl"
@@ -30,8 +30,8 @@ class Swarmctl < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.5/swarmctl_0.3.5_linux_amd64.tar.gz"
-        sha256 "29fd451ca1f18730226b6676cab8faf5ce09ec7632a59b72d366ad5a28d74d38"
+        url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.6/swarmctl_0.3.6_linux_amd64.tar.gz"
+        sha256 "44adcb26399e083da34ea11dfe230926b306d0bd62cfdb91491175338c50a7d7"
 
         def install
           bin.install "swarmctl"
@@ -40,8 +40,8 @@ class Swarmctl < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.5/swarmctl_0.3.5_linux_arm64.tar.gz"
-        sha256 "0fb93e2732e19382aca57a6fbf447d002a61e647f97c8929372723adaba5221d"
+        url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.6/swarmctl_0.3.6_linux_arm64.tar.gz"
+        sha256 "24e3a302f8436503bf653a08b51ef6baf2aa1cf330fd9e0c734177fa64865d70"
 
         def install
           bin.install "swarmctl"
