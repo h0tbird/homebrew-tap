@@ -5,47 +5,41 @@
 class Swarmctl < Formula
   desc "A k8s service swarm"
   homepage "https://github.com/h0tbird/k-swarm"
-  version "0.3.6"
+  version "0.3.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.6/swarmctl_0.3.6_darwin_amd64.tar.gz"
-      sha256 "f2750e4bc52ce50eb4116990a5b1ce1a107820983252423a66567183d7b4dd34"
+      url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.7/swarmctl_0.3.7_darwin_amd64.tar.gz"
+      sha256 "9d5da1384119220196f12487bac5c8bf3b68080d626c816c06e2687579af0e4b"
 
-      def install
+      define_method(:install) do
         bin.install "swarmctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.6/swarmctl_0.3.6_darwin_arm64.tar.gz"
-      sha256 "0985ecc2a98082e67fa14bc26312f4a768d6a704a80b7c770b2a4b6dc9c34985"
+      url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.7/swarmctl_0.3.7_darwin_arm64.tar.gz"
+      sha256 "9b2c8bb7d48206f2d59a16137262967ad79b844beb08e2094c27e0139cd888eb"
 
-      def install
+      define_method(:install) do
         bin.install "swarmctl"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.6/swarmctl_0.3.6_linux_amd64.tar.gz"
-        sha256 "44adcb26399e083da34ea11dfe230926b306d0bd62cfdb91491175338c50a7d7"
-
-        def install
-          bin.install "swarmctl"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.7/swarmctl_0.3.7_linux_amd64.tar.gz"
+      sha256 "e8f55e18a4729c3f3a88882f1163d4f74c6bfd1992245ef9ff878b45043a757d"
+      define_method(:install) do
+        bin.install "swarmctl"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.6/swarmctl_0.3.6_linux_arm64.tar.gz"
-        sha256 "24e3a302f8436503bf653a08b51ef6baf2aa1cf330fd9e0c734177fa64865d70"
-
-        def install
-          bin.install "swarmctl"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/h0tbird/k-swarm/releases/download/v0.3.7/swarmctl_0.3.7_linux_arm64.tar.gz"
+      sha256 "9feff49351f139dd7882e05d2a4fbfb6dc03c68c00f83dab663198b22dfaecfa"
+      define_method(:install) do
+        bin.install "swarmctl"
       end
     end
   end
